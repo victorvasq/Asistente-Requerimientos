@@ -159,8 +159,6 @@ if ss["proceso"] == "Chat":
             respuest = respuestaUsuario.replace("\n", "<br>")
             ss.messages.append({"role": "user", "content": respuest})
             st.markdown(f"**🙂 <span style='color: #008000;'>Usuario</span>**: {respuest}", unsafe_allow_html=True)
-            #st.markdown(f"**👩‍🦰 <span style='color: #246ba9;'>Asistente</span>**:", unsafe_allow_html=True)
-            #st.image(image, width=50)
 
             message_placeholder = st.empty()
             message_placeholder.markdown("**👩‍🦰 <span style='color: #246ba9;'>Asistente</span>**: ... <img src='https://drive.google.com/uc?export=download&id=1ck9DDogy15NJxnNXKy8FiROZHwwnvVFS' alt='0' style='width: 25px;'>", unsafe_allow_html=True)
@@ -178,10 +176,7 @@ if ss["proceso"] == "Chat":
                 ss["resumen"] = formatoWord(respuesta.strip()) #contenido
                 st.experimental_rerun()
             else:
-                #st.image(image, width=1)
                 ss.messages.append({"role": "assistant", "content": respuesta})
-                
-                
                 respuesta = respuesta.replace("\n", "<br>")
                 palabras = respuesta.split()
                 result=""
@@ -190,7 +185,6 @@ if ss["proceso"] == "Chat":
                     message_placeholder.markdown("**👩‍🦰 <span style='color: #246ba9;'>Asistente</span>**: " + result + "▌", unsafe_allow_html=True)
                     time.sleep(0.05)
                 message_placeholder.markdown("**👩‍🦰 <span style='color: #246ba9;'>Asistente</span>**: " + result, unsafe_allow_html=True)
-                #st.experimental_rerun()
     
     
     # Formulario textArea
