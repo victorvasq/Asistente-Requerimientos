@@ -113,7 +113,7 @@ if "resumen" not in ss:
     ss["resumen"] = ""
 image = "loading.gif"
 
-#openai_api_key = st.secrets["api_key"]
+openai_api_key = st.secrets["api_key"]
 
 
 st.title("Gestión de Requerimientos") 
@@ -121,7 +121,7 @@ st.title("Gestión de Requerimientos")
 
 # Menu Lateral
 with st.sidebar:
-    openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
+    #openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
     st.sidebar.header('Asistente de Requerimientos')
     st.markdown("""
         <div style="text-align: justify;">
