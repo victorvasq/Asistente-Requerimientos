@@ -66,9 +66,9 @@ def imprimeChat():
         role = msg["role"]
         content = msg["content"].replace("\n", "<br>")
         if role == "assistant":
-            st.markdown(f"**👩‍🦰 <span style='color: #246ba9;'>Asistente</span>**: {content}", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align: left;border: 2px solid rgb(173 166 1 / 38%);padding: 20px;border-radius: 13px;'>👩‍🦰 <span style='color: #246ba9;font-weight: bold;'>Asistente</span>: {content}</p>", unsafe_allow_html=True)
         else:
-            st.markdown(f"**🙂 <span style='color: #008000;'>Usuario</span>**: {content}", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align: right;border: 2px solid rgb(1 173 22 / 38%);padding: 20px;border-radius: 13px;'>🙂 <span style='color: #008000;font-weight: bold;'>Usuario</span>: {content}</p>", unsafe_allow_html=True)
 
 # Llamado del boton Chat
 def form_callback_chat():
@@ -158,10 +158,10 @@ if ss["proceso"] == "Chat":
             ss.user_input_area = ""
             respuest = respuestaUsuario.replace("\n", "<br>")
             ss.messages.append({"role": "user", "content": respuest})
-            st.markdown(f"**🙂 <span style='color: #008000;'>Usuario</span>**: {respuest}", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align: right;border: 2px solid rgb(1 173 22 / 38%);padding: 20px;border-radius: 13px;'>🙂 <span style='color: #008000;font-weight: bold;'>Usuario</span>: {respuest}</p>", unsafe_allow_html=True)
 
             message_placeholder = st.empty()
-            message_placeholder.markdown("**👩‍🦰 <span style='color: #246ba9;'>Asistente</span>**: ... <img src='https://drive.google.com/uc?export=download&id=1ck9DDogy15NJxnNXKy8FiROZHwwnvVFS' alt='0' style='width: 25px;'>", unsafe_allow_html=True)
+            message_placeholder.markdown("<p style='text-align: left;border: 2px solid rgb(173 166 1 / 38%);padding: 20px;border-radius: 13px;'>👩‍🦰 <span style='color: #246ba9;font-weight: bold;'>Asistente</span>: ... <img src='https://drive.google.com/uc?export=download&id=1ck9DDogy15NJxnNXKy8FiROZHwwnvVFS' alt='0' style='width: 25px;'></p>", unsafe_allow_html=True)
             
             # llamando al LLM
             chat_llm_chain = ss["chat_llm_chain"]
@@ -182,9 +182,9 @@ if ss["proceso"] == "Chat":
                 result=""
                 for palabra in palabras:
                     result += " " + palabra
-                    message_placeholder.markdown("**👩‍🦰 <span style='color: #246ba9;'>Asistente</span>**: " + result + "▌", unsafe_allow_html=True)
+                    message_placeholder.markdown("<p style='text-align: left;border: 2px solid rgb(173 166 1 / 38%);padding: 20px;border-radius: 13px;'>👩‍🦰 <span style='color: #246ba9;font-weight: bold;'>Asistente</span>: " + result + "▌</p>", unsafe_allow_html=True)
                     time.sleep(0.05)
-                message_placeholder.markdown("**👩‍🦰 <span style='color: #246ba9;'>Asistente</span>**: " + result, unsafe_allow_html=True)
+                message_placeholder.markdown("<p style='text-align: left;border: 2px solid rgb(173 166 1 / 38%);padding: 20px;border-radius: 13px;'>👩‍🦰 <span style='color: #246ba9;font-weight: bold;'>Asistente</span>: " + result+"</p>", unsafe_allow_html=True)
     
     
     # Formulario textArea
